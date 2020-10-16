@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController, UINavigationControllerDelegate {
+class ViewController: UIViewController {
     let profileImage = UIImageView()
     let partLabel = UILabel()
     let partNameLabel = UILabel()
@@ -17,9 +17,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationController?.delegate = self
-        
         setUp()
     }
 
