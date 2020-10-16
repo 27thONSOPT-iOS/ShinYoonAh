@@ -14,15 +14,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     @IBAction func touchUpLogin(_ sender: Any) {
         guard let dvc = self.storyboard?.instantiateViewController(identifier:
         "navigationController") else {
             return
         }
-        
         dvc.modalPresentationStyle = .fullScreen
         self.present(dvc, animated: true, completion: nil)
+        
+        let vc = SecondViewController()
+        vc.editLabelInfo = { part, name in
+            self.partLabel.text = part
+            self.statusLabel.text = name
+        }
     }
 }
 
