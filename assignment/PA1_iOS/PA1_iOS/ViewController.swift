@@ -15,19 +15,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    func editLabels(part: String, name: String) {
+        partLabel.text = part
+        statusLabel.text = "\(name) 님 안녕하세요 ~~ 🥰"
+    }
+    
     @IBAction func touchUpLogin(_ sender: Any) {
-        guard let dvc = self.storyboard?.instantiateViewController(identifier:
-        "navigationController") else {
+        guard let dvc = self.storyboard?.instantiateViewController(identifier: "navigationController") else {
             return
         }
         dvc.modalPresentationStyle = .fullScreen
         self.present(dvc, animated: true, completion: nil)
-        
-        let vc = SecondViewController()
-        vc.editLabelInfo = { part, name in
-            self.partLabel.text = part
-            self.statusLabel.text = name
-        }
     }
 }
 

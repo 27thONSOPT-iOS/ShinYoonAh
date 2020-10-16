@@ -8,8 +8,6 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-    var editLabelInfo: ((String, String) -> Void)?
-    
     @IBOutlet weak var partTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     
@@ -18,7 +16,8 @@ class SecondViewController: UIViewController {
     }
     
     @IBAction func touchUpDismiss(_ sender: Any) {
-        self.editLabelInfo?(partTextField.text ?? " ", nameTextField.text ?? " ")
+        guard let dvc = self.presentingViewController as? ViewController else { return }
+        dvc.editLabels(part: partTextField.text ?? " ", name: nameTextField.text ?? " ")
         dismiss(animated: true, completion: nil)
     }
     
