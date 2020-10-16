@@ -21,6 +21,7 @@
             statusLabel.text = "\(name) 님 안녕하세요 ~~ 🥰"
         }
     ```
+    
     1. `SecondViewController`에서 `로그인` 버튼을 누르는 경우, `ViewController`가 presenting 되면서 `ViewController`의 `editLabels`라는 함수를 call 한다. 
     <br/>
     2. TextField.text의 값이 `editLabels`의 `part`와 `name`으로 전달된다.
@@ -56,6 +57,7 @@
             dismiss(animated: true, completion: nil)
         }
     ```
+
 
     1. `ViewController`에서 바로 `LoginViewController`를 사용하면 `NavigationController`가 present되지 않고 `NavigationController`만 present하면 빈 `NavigationController`가 present되기 때문에 `UINavigationController`의 `rootViewController`를 `LoginViewController`로 정해주어 `LoginViewController`가 present될 수 있게 하였다.
     <br/>
