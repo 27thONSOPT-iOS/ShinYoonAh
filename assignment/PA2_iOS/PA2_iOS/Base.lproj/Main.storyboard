@@ -727,6 +727,20 @@
                                     <constraint firstAttribute="bottom" secondItem="dWD-QI-OV1" secondAttribute="bottom" id="jeq-ho-9An"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OwO-ZQ-UHx">
+                                <rect key="frame" x="312" y="896" width="50" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.83956916500000001" blue="0.092649522979999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="AVb-ef-9u9"/>
+                                    <constraint firstAttribute="height" constant="50" id="QKr-qW-hau"/>
+                                </constraints>
+                                <state key="normal" title="Top">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchUpTop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kpp-3F-qOA"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s70-xl-Ncz" userLabel="headerView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                 <subviews>
@@ -771,11 +785,13 @@
                         <constraints>
                             <constraint firstItem="3tx-el-O27" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1AI-cH-5E9"/>
                             <constraint firstItem="OSN-x6-6cx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2Ok-wX-g5c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OwO-ZQ-UHx" secondAttribute="trailing" constant="13" id="3pz-jF-zbh"/>
                             <constraint firstItem="dWD-QI-OV1" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="60f-9I-CDP"/>
                             <constraint firstItem="s70-xl-Ncz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7qI-4b-UGd"/>
                             <constraint firstItem="s70-xl-Ncz" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8bR-bk-fNe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OSN-x6-6cx" secondAttribute="bottom" id="HA2-Fl-LSV"/>
                             <constraint firstItem="OSN-x6-6cx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ye3-LY-Y74"/>
+                            <constraint firstItem="OSN-x6-6cx" firstAttribute="top" secondItem="OwO-ZQ-UHx" secondAttribute="bottom" constant="10" id="Ypo-fj-H8W"/>
                             <constraint firstItem="s70-xl-Ncz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ct9-iM-zAd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3tx-el-O27" secondAttribute="trailing" id="iBC-Kv-uTP"/>
                             <constraint firstAttribute="bottom" secondItem="3tx-el-O27" secondAttribute="bottom" id="ozG-7K-APZ"/>
@@ -784,6 +800,10 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="scrollView" destination="3tx-el-O27" id="7ri-mV-RYk"/>
+                        <outlet property="topButton" destination="OwO-ZQ-UHx" id="v5W-bn-Crq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
