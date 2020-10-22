@@ -16,13 +16,13 @@
             scrollView.delegate = self
         }
 
-            func scrollViewDidScroll(_ scrollView: UIScrollView) {
-                    if(scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height) / 2) {
-                        topButton.isHidden = false
-                    } else {
-                        topButton.isHidden = true
-                    }
-                }
+        func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            if(scrollView.contentOffset.y > (scrollView.contentSize.height - scrollView.frame.size.height) / 2) {
+                topButton.isHidden = false
+            } else {
+                topButton.isHidden = true
+            }
+        }
     }
     ```
 
@@ -58,7 +58,7 @@
             guard let dvc = self.presentingViewController as? ViewController else { return }
             dvc.editLabels(part: partTextField.text ?? " ", name: nameTextField.text ?? " ")
             dismiss(animated: true, completion: nil)
-        }
+    }
     ```
 
     ✅ViewController
@@ -67,7 +67,7 @@
     func editLabels(part: String, name: String) {
             partLabel.text = part
             statusLabel.text = "\(name) 님 안녕하세요 ~~ 🥰"
-        }
+    }
     ```
     
     - `SecondViewController`에서 `로그인` 버튼을 누르는 경우, `ViewController`가 presenting 되면서 `ViewController`의 `editLabels`라는 함수를 call 한다. 
@@ -90,7 +90,7 @@
                 self.introduceLabel.text = "\(name) 님 안녕하세요!!!😂"
             }
             present(vc, animated: true, completion: nil)
-        }
+    }
     ```
 
     ✅LoginViewController
@@ -101,7 +101,7 @@
     @objc func touchUpLogin() {
             editLabelText?(partTextField.text ?? " ", nameTextField.text ?? " ")
             dismiss(animated: true, completion: nil)
-        }
+    }
     ```
 
 
