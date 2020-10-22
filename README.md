@@ -1,5 +1,9 @@
 # ShinYoonAh
 
+
+## 🐥 2주차 과제 (10/20_제출 완료) 🐥
+- [도전 과제](https://github.com/27thONSOPT-iOS/ShinYoonAh/tree/master/assignment/PA2_iOS/PA2_iOS)
+
 ## 🐥 1주차 과제 (10/16_제출 완료) 🐥
 - [도전 과제](https://github.com/27thONSOPT-iOS/ShinYoonAh/tree/master/assignment/PA1_iOS/PA1_iOS)
 
