@@ -38,6 +38,5 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         topButton.isHidden = true
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
-    
 }
 
