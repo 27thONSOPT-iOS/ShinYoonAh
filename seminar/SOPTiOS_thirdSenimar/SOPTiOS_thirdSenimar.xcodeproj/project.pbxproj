@@ -64,7 +64,6 @@
 		ED733B0F254D33EA004698D9 = {
 			isa = PBXGroup;
 			children = (
-				ED733B51254D566D004698D9 /* CollectionViewTestVC.swift */,
 				ED733B1A254D33EA004698D9 /* SOPTiOS_thirdSenimar */,
 				ED733B19254D33EA004698D9 /* Products */,
 			);
@@ -81,6 +80,7 @@
 		ED733B1A254D33EA004698D9 /* SOPTiOS_thirdSenimar */ = {
 			isa = PBXGroup;
 			children = (
+				ED733B51254D566D004698D9 /* CollectionViewTestVC.swift */,
 				ED733B1B254D33EA004698D9 /* AppDelegate.swift */,
 				ED733B1D254D33EA004698D9 /* SceneDelegate.swift */,
 				ED733B1F254D33EA004698D9 /* ViewController.swift */,
