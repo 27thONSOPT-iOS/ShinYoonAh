@@ -1,7 +1,93 @@
 # ShinYoonAh
 
+## 🐥 3주차 과제 (11/06_제출 완료) 🐥
+- [일반 과제](https://github.com/27thONSOPT-iOS/ShinYoonAh/tree/master/assignment/PA3_iOS/PA3_iOS)
 
-## 🐥 2주차 과제 (10/20_제출 완료) 🐥
+### ✨Main.storyboard에 짠 View의 모습 ✨
+
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5f55ebfd-432a-4bdd-bf4c-907805ac6e2c/_2020-11-06__9.34.04.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20201106%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20201106T130115Z&X-Amz-Expires=86400&X-Amz-Signature=ca06870d893aefed52c1f2892ff2d68355bec43dc9cf457ba6407efe17f659e0&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22_2020-11-06__9.34.04.png%22" width="32%"></img>
+
+- `고정 View`는 2주차 과제처럼 `ScrollView`와 분리해서 따로 `View`를 만들었다. 그럼 스크롤할 때 함께 올라가지 않는다.
+- 아무것도 모르고 `CollectionView`를 사용해서 banner와 profile 화면을 모두 만들려고 했지만 실패했다🐌
+- 먼저 `ScrollView`를 만들고 그 위에 `ImageView`와 `CollectionView`를 얹기로 마음 먹은 뒤에 시도❗️
+- 결과적으로 위에 화면처럼 나왔다 짠🎆
+
+    → 저 상태로 실행을 하면 `CollectionView`도 스크롤되고 `ScrollView`도 스크롤되는 신명나는 상황이 발생하기에 🌟**꼭 `CollectionView`에서 `View>Interaction>Multiple Touch` 눌러주기** 🌟
+
+<br/>
+
+✅ProfileViewCell
+
+```cpp
+func setCell(info: Profile) {
+        profileImage.image = UIImage(named: info.imageName)
+        profileName.text = info.imageName
+        profileLabel.text = info.statusMessage
+    }
+```
+
+- `cell`에 `setCell`이라는 함수를 만들어두고 Profile Data를 받아서 프로필 이미지, 프로필 이름, 프로필 상태 라벨을 설정할 수 있게 한다.
+
+<br/>
+
+✅ViewController(UICollectionViewDataSource)
+
+```cpp
+extension ViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return profile.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: ProfileViewCell.identifier, for: indexPath) as? ProfileViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.setCell(info: profile[indexPath.item])
+				// ProfileViewCell 안을 설정하기        
+
+        return cell
+    }
+}
+```
+
+- `cell`이라는 변수에 `ProfileViewCell`를 받아와서 setCell함수를 부른다.
+- profile이라는 데이터의 해당 **indexPath의 item**를 받아온다 → `TableView`는 **indexPath의 row** ❗️❗️
+
+<br/>
+
+✅ViewController(UICollectionViewDelegateFlowLayout)
+
+```cpp
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 150, height: 225)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 27
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 41, left: 20, bottom: 0, right: 20)
+    }
+}
+```
+
+- `TableView`와는 다르게 `CollectionView`는 해당 셀들의 위치를 `FlowLayout`를 통해서 잡아줄 수 있다.
+1. 첫 번째 함수(sizeForItemAt) : **해당 cell의 크기 잡기**
+2. 두 번째 함수(minimumLineSpacingForSectionAt) : **각각 셀들 위,아래의 Space**
+3. 세 번째 함수(minimumInteritemSpacingForSectionAt) : **각각 셀들 좌,우의 Space**
+4. 네 번째 함수(insetForSectionAt) : **CollectionView ContentInset 지정**
+
+
+<br/>
+<br/>
+
+## 🐣 2주차 과제 (10/20_제출 완료) 🐣
 - [도전 과제](https://github.com/27thONSOPT-iOS/ShinYoonAh/tree/master/assignment/PA2_iOS/PA2_iOS)
 
     ✅ViewController
@@ -44,11 +130,11 @@
     - `setContentOffset`은 `UIScrollView`에서 특정 위치로 scroll할 때 사용된다.
     - `x축`으로는 스크롤할 필요가 없기 때문에 0으로 해주고 맨 위로 이동할 것이기에 `y축`도 0으로 맞춰준다.
 
-    <br/>
-    <br/>
+<br/>
+<br/>
     
 ---
-## 🐥 1주차 과제 (10/16_제출 완료) 🐥
+## 🐣 1주차 과제 (10/16_제출 완료) 🐣
 - [도전 과제](https://github.com/27thONSOPT-iOS/ShinYoonAh/tree/master/assignment/PA1_iOS/PA1_iOS)
 
     ✅SecondViewController
