@@ -87,6 +87,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 <br/>
 <br/>
 
+---
+
 ## 🐣 2주차 과제 (10/20_제출 완료) 🐣
 - [도전 과제](https://github.com/27thONSOPT-iOS/ShinYoonAh/tree/master/assignment/PA2_iOS/PA2_iOS)
 
