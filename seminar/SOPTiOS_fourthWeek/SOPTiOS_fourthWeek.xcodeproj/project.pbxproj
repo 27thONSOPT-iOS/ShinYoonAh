@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7CD4ED8C4DEA445D1A87B739 /* Pods_SOPTiOS_fourthWeek.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D814D9166FDD8BA8F8AD199F /* Pods_SOPTiOS_fourthWeek.framework */; };
 		EDE406B8255644000097CD46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE406B7255644000097CD46 /* AppDelegate.swift */; };
 		EDE406BA255644000097CD46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE406B9255644000097CD46 /* SceneDelegate.swift */; };
 		EDE406BC255644000097CD46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE406BB255644000097CD46 /* ViewController.swift */; };
 		EDE406BF255644000097CD46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE406BD255644000097CD46 /* Main.storyboard */; };
 		EDE406C1255644010097CD46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE406C0255644010097CD46 /* Assets.xcassets */; };
 		EDE406C4255644010097CD46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE406C2255644010097CD46 /* LaunchScreen.storyboard */; };
+		EDE406CD255648450097CD46 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE406CC255648450097CD46 /* CustomTabBarController.swift */; };
+		EDE406D0255648710097CD46 /* PurpleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE406CF255648710097CD46 /* PurpleVC.swift */; };
+		EDE406D32556487E0097CD46 /* YellowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE406D22556487E0097CD46 /* YellowVC.swift */; };
+		EDE406DD25564FAE0097CD46 /* AnimateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE406DC25564FAE0097CD46 /* AnimateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F3424DDE94A8676E8ED15BE /* Pods-SOPTiOS_fourthWeek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SOPTiOS_fourthWeek.debug.xcconfig"; path = "Target Support Files/Pods-SOPTiOS_fourthWeek/Pods-SOPTiOS_fourthWeek.debug.xcconfig"; sourceTree = "<group>"; };
+		D814D9166FDD8BA8F8AD199F /* Pods_SOPTiOS_fourthWeek.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SOPTiOS_fourthWeek.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE406B4255644000097CD46 /* SOPTiOS_fourthWeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOPTiOS_fourthWeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDE406B7255644000097CD46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDE406B9255644000097CD46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +31,11 @@
 		EDE406C0255644010097CD46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDE406C3255644010097CD46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDE406C5255644010097CD46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDE406CC255648450097CD46 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		EDE406CF255648710097CD46 /* PurpleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleVC.swift; sourceTree = "<group>"; };
+		EDE406D22556487E0097CD46 /* YellowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowVC.swift; sourceTree = "<group>"; };
+		EDE406DC25564FAE0097CD46 /* AnimateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateViewController.swift; sourceTree = "<group>"; };
+		FF8A2011E122D9B662D9EA75 /* Pods-SOPTiOS_fourthWeek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SOPTiOS_fourthWeek.release.xcconfig"; path = "Target Support Files/Pods-SOPTiOS_fourthWeek/Pods-SOPTiOS_fourthWeek.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CD4ED8C4DEA445D1A87B739 /* Pods_SOPTiOS_fourthWeek.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F30109DEA4EA39C037977B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F3424DDE94A8676E8ED15BE /* Pods-SOPTiOS_fourthWeek.debug.xcconfig */,
+				FF8A2011E122D9B662D9EA75 /* Pods-SOPTiOS_fourthWeek.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9FA4A570BBF9B434B65B491E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D814D9166FDD8BA8F8AD199F /* Pods_SOPTiOS_fourthWeek.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EDE406AB255644000097CD46 = {
 			isa = PBXGroup;
 			children = (
 				EDE406B6255644000097CD46 /* SOPTiOS_fourthWeek */,
 				EDE406B5255644000097CD46 /* Products */,
+				4F30109DEA4EA39C037977B8 /* Pods */,
+				9FA4A570BBF9B434B65B491E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +89,27 @@
 		EDE406B6255644000097CD46 /* SOPTiOS_fourthWeek */ = {
 			isa = PBXGroup;
 			children = (
+				EDE406D5255648880097CD46 /* ViewController */,
 				EDE406B7255644000097CD46 /* AppDelegate.swift */,
 				EDE406B9255644000097CD46 /* SceneDelegate.swift */,
-				EDE406BB255644000097CD46 /* ViewController.swift */,
 				EDE406BD255644000097CD46 /* Main.storyboard */,
 				EDE406C0255644010097CD46 /* Assets.xcassets */,
 				EDE406C2255644010097CD46 /* LaunchScreen.storyboard */,
 				EDE406C5255644010097CD46 /* Info.plist */,
 			);
 			path = SOPTiOS_fourthWeek;
+			sourceTree = "<group>";
+		};
+		EDE406D5255648880097CD46 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EDE406CC255648450097CD46 /* CustomTabBarController.swift */,
+				EDE406BB255644000097CD46 /* ViewController.swift */,
+				EDE406D22556487E0097CD46 /* YellowVC.swift */,
+				EDE406CF255648710097CD46 /* PurpleVC.swift */,
+				EDE406DC25564FAE0097CD46 /* AnimateViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +119,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDE406C8255644010097CD46 /* Build configuration list for PBXNativeTarget "SOPTiOS_fourthWeek" */;
 			buildPhases = (
+				108014120C1E876C3A41A5B1 /* [CP] Check Pods Manifest.lock */,
 				EDE406B0255644000097CD46 /* Sources */,
 				EDE406B1255644000097CD46 /* Frameworks */,
 				EDE406B2255644000097CD46 /* Resources */,
+				740D75C92ABB8E9FE9823274 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,13 +179,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		108014120C1E876C3A41A5B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SOPTiOS_fourthWeek-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		740D75C92ABB8E9FE9823274 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SOPTiOS_fourthWeek/Pods-SOPTiOS_fourthWeek-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SOPTiOS_fourthWeek/Pods-SOPTiOS_fourthWeek-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SOPTiOS_fourthWeek/Pods-SOPTiOS_fourthWeek-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EDE406B0255644000097CD46 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EDE406BC255644000097CD46 /* ViewController.swift in Sources */,
+				EDE406D0255648710097CD46 /* PurpleVC.swift in Sources */,
+				EDE406DD25564FAE0097CD46 /* AnimateViewController.swift in Sources */,
+				EDE406D32556487E0097CD46 /* YellowVC.swift in Sources */,
 				EDE406B8255644000097CD46 /* AppDelegate.swift in Sources */,
+				EDE406CD255648450097CD46 /* CustomTabBarController.swift in Sources */,
 				EDE406BA255644000097CD46 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +376,7 @@
 		};
 		EDE406C9255644010097CD46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F3424DDE94A8676E8ED15BE /* Pods-SOPTiOS_fourthWeek.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +395,7 @@
 		};
 		EDE406CA255644010097CD46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF8A2011E122D9B662D9EA75 /* Pods-SOPTiOS_fourthWeek.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
