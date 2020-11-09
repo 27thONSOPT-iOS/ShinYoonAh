@@ -13,9 +13,7 @@
 		ED1A34AD253E085A000A1367 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1A34AB253E085A000A1367 /* Main.storyboard */; };
 		ED1A34AF253E085B000A1367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED1A34AE253E085B000A1367 /* Assets.xcassets */; };
 		ED1A34B2253E085B000A1367 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1A34B0253E085B000A1367 /* LaunchScreen.storyboard */; };
-		ED1A34BC253E764E000A1367 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = ED1A34BB253E764E000A1367 /* NotoSansKR-Bold.otf */; };
-		ED1A34BF253E7685000A1367 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = ED1A34BE253E7685000A1367 /* NotoSansKR-Medium.otf */; };
-		ED1A34C2253E7690000A1367 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = ED1A34C1253E7690000A1367 /* NotoSansKR-Regular.otf */; };
+		EDE406E5255929340097CD46 /* Noto_Sans_KR in Resources */ = {isa = PBXBuildFile; fileRef = EDE406E4255929340097CD46 /* Noto_Sans_KR */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +25,7 @@
 		ED1A34AE253E085B000A1367 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED1A34B1253E085B000A1367 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED1A34B3253E085B000A1367 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED1A34BB253E764E000A1367 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Bold.otf"; path = "../../../../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
-		ED1A34BE253E7685000A1367 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Medium.otf"; path = "../../../../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
-		ED1A34C1253E7690000A1367 /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NotoSansKR-Regular.otf"; path = "../../../../../../../../Downloads/Noto_Sans_KR/NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		EDE406E4255929340097CD46 /* Noto_Sans_KR */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Noto_Sans_KR; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +58,7 @@
 		ED1A34A4253E085A000A1367 /* PA2_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				ED1A34BA253E7610000A1367 /* font */,
+				EDE406E4255929340097CD46 /* Noto_Sans_KR */,
 				ED1A34A5253E085A000A1367 /* AppDelegate.swift */,
 				ED1A34A7253E085A000A1367 /* SceneDelegate.swift */,
 				ED1A34A9253E085A000A1367 /* ViewController.swift */,
@@ -72,16 +68,6 @@
 				ED1A34B3253E085B000A1367 /* Info.plist */,
 			);
 			path = PA2_iOS;
-			sourceTree = "<group>";
-		};
-		ED1A34BA253E7610000A1367 /* font */ = {
-			isa = PBXGroup;
-			children = (
-				ED1A34C1253E7690000A1367 /* NotoSansKR-Regular.otf */,
-				ED1A34BE253E7685000A1367 /* NotoSansKR-Medium.otf */,
-				ED1A34BB253E764E000A1367 /* NotoSansKR-Bold.otf */,
-			);
-			path = font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,11 +127,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDE406E5255929340097CD46 /* Noto_Sans_KR in Resources */,
 				ED1A34B2253E085B000A1367 /* LaunchScreen.storyboard in Resources */,
 				ED1A34AF253E085B000A1367 /* Assets.xcassets in Resources */,
-				ED1A34BF253E7685000A1367 /* NotoSansKR-Medium.otf in Resources */,
-				ED1A34BC253E764E000A1367 /* NotoSansKR-Bold.otf in Resources */,
-				ED1A34C2253E7690000A1367 /* NotoSansKR-Regular.otf in Resources */,
 				ED1A34AD253E085A000A1367 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

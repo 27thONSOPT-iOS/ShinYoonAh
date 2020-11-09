@@ -13,9 +13,9 @@
 		EDE406812554F82D0097CD46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE4067F2554F82D0097CD46 /* Main.storyboard */; };
 		EDE406832554F82E0097CD46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE406822554F82E0097CD46 /* Assets.xcassets */; };
 		EDE406862554F82E0097CD46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE406842554F82E0097CD46 /* LaunchScreen.storyboard */; };
-		EDE4068F2554FA450097CD46 /* Noto_Sans_KR in Resources */ = {isa = PBXBuildFile; fileRef = EDE4068E2554FA450097CD46 /* Noto_Sans_KR */; };
 		EDE406922555029C0097CD46 /* ProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE406912555029C0097CD46 /* ProfileViewCell.swift */; };
 		EDE406A1255511DF0097CD46 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE406A0255511DF0097CD46 /* Profile.swift */; };
+		EDE406EC255929C90097CD46 /* Noto_Sans_KR 복사본 in Resources */ = {isa = PBXBuildFile; fileRef = EDE406EB255929C90097CD46 /* Noto_Sans_KR 복사본 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +27,9 @@
 		EDE406822554F82E0097CD46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDE406852554F82E0097CD46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDE406872554F82E0097CD46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDE4068E2554FA450097CD46 /* Noto_Sans_KR */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Noto_Sans_KR; path = "../../../../../iOS etc/Noto_Sans_KR"; sourceTree = "<group>"; };
 		EDE406912555029C0097CD46 /* ProfileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewCell.swift; sourceTree = "<group>"; };
 		EDE406A0255511DF0097CD46 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		EDE406EB255929C90097CD46 /* Noto_Sans_KR 복사본 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Noto_Sans_KR 복사본"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 		EDE406782554F82D0097CD46 /* PA3_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				EDE4068E2554FA450097CD46 /* Noto_Sans_KR */,
+				EDE406EB255929C90097CD46 /* Noto_Sans_KR 복사본 */,
 				EDE406792554F82D0097CD46 /* AppDelegate.swift */,
 				EDE4067B2554F82D0097CD46 /* SceneDelegate.swift */,
 				EDE4067D2554F82D0097CD46 /* ViewController.swift */,
@@ -133,9 +133,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDE4068F2554FA450097CD46 /* Noto_Sans_KR in Resources */,
 				EDE406862554F82E0097CD46 /* LaunchScreen.storyboard in Resources */,
 				EDE406832554F82E0097CD46 /* Assets.xcassets in Resources */,
+				EDE406EC255929C90097CD46 /* Noto_Sans_KR 복사본 in Resources */,
 				EDE406812554F82D0097CD46 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
