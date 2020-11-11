@@ -10,12 +10,15 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var profileCollectionView: UICollectionView!
     @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var headerView: UIView!
     
-    
+    var isTop = false
     var profile: [Profile] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.delegate = self
         setProfileData()
         profileCollectionView.delegate = self
         profileCollectionView.dataSource = self
@@ -24,7 +27,7 @@ class ViewController: UIViewController {
 
     func setUp() {
         profileButton.layer.masksToBounds = true
-        profileButton.layer.cornerRadius = 12
+        profileButton.layer.cornerRadius = 5
     }
     
     func setProfileData() {
@@ -75,6 +78,33 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 41, left: 20, bottom: 0, right: 20)
+    }
+}
+
+extension ViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        UIView.animate(withDuration: 0.3, animations: {
+            if self.isTop == false {
+                self.headerView.transform = CGAffineTransform(translationX: 0, y: -88)
+            }
+            if scrollView.contentOffset.y > 0 {
+                self.isTop = false
+                self.scrollView.frame.size.height = UIScreen.main.bounds.size.height
+                self.scrollView.transform = CGAffineTransform(translationX: 0, y: -88)
+            } else {
+                self.isTop = true
+            }
+        })
+    }
+    
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        UIView.animate(withDuration: 0.3, animations: {
+            if scrollView.contentOffset.y >= 0 {
+                self.headerView.transform = .identity
+                self.scrollView.transform = .identity
+            }
+        })
     }
 }
 
