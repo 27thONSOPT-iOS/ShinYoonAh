@@ -1,5 +1,118 @@
 # ShinYoonAh
 
+## 🐥 4주차 과제 (11/12_제출 완료) 🐥
+- [**일반 과제**](https://github.com/27thONSOPT-iOS/ShinYoonAh/tree/master/assignment/PA3_iOS/PA3_iOS)
+
+    ▶️ `TextField`를 눌러서 키보드가 나오면 애니메이션을 올렸다가 `return`를 누르면 애니메이션을 내려라
+
+    → textfield를 누르는 것과 return 키를 누르는 것 모두 `UITextFieldDelegate`를 사용해서 구현하자!
+
+    ```swift
+    extension LoginViewController: UITextFieldDelegate {
+        func textFieldDidBeginEditing(_ textField: UITextField) {
+            let move = CGAffineTransform(translationX: 0, y: -50)
+
+            UIView.animate(withDuration: 0.2, animations: {
+                self.profileImage.transform = move
+                self.partLabel.transform = move
+                self.partTextField.transform = move
+                self.nameLabel.transform = move
+                self.nameTextField.transform = move
+            })
+        }
+
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.profileImage.transform = .identity
+                self.partLabel.transform = .identity
+                self.partTextField.transform = .identity
+                self.nameLabel.transform = .identity
+                self.nameTextField.transform = .identity
+            })
+            textField.resignFirstResponder()
+            return true
+        }
+    }
+    ```
+
+    - UITextFieldDelegate에 있는 `textFieldDidBeginEditing`, `textFieldShouldReturn`를 사용
+        - textFieldDidBeginEditing : textField 수정이 시작될 때 동작 → **textField를 누르면 동작**
+        - textFieldShouldReturn : textField의 **return키를 눌렀을 때 동작**
+    - `CGAffineTransform`의 `translaionX`를 사용해서 y좌표를 50 올리자 → animate함수에 넣어주면 이미지가 올라가는 동작이 완성
+    - 다시 내려오는 동작은 `.identity`를 사용해서 원래 자리로 돌아오게 해주자
+    - `resignFirstResponder` 는 키보드가 자동으로 내려가도록 동작함
+    
+<br/>    
+
+- **도전 과제**
+
+    ▶️ 스크롤을 할 경우 고정 헤더가 사라졌다가 멈추면 고정 헤더가 나타나게 하자 ❗️
+
+    → `UIScrollViewDelegate`를 사용해서 헤더의 움직임을 구현하자!
+
+    ```swift
+    extension ViewController: UIScrollViewDelegate {
+        func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            UIView.animate(withDuration: 0.3, animations: {
+                if self.isTop == false {
+                    self.headerView.transform = CGAffineTransform(translationX: 0, y: -88)
+                }
+                if scrollView.contentOffset.y > 0 {
+                    self.isTop = false
+                    self.scrollView.frame.size.height = UIScreen.main.bounds.size.height
+                    self.scrollView.transform = CGAffineTransform(translationX: 0, y: -88)
+                } else {
+                    self.isTop = true
+                }
+            })
+        }
+        
+        
+        func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+            UIView.animate(withDuration: 0.3, animations: {
+                if scrollView.contentOffset.y >= 0 {
+                    self.headerView.transform = .identity
+                    self.scrollView.transform = .identity
+                }
+            })
+        }
+    }
+    ```
+
+    - UIScrollViewDelegate에 있는 `scrollViewDidScroll`과 `scrollViewDidEndDecelerating`를 사용
+        - scrollViewDidScroll : **scrollView가 scroll되면 동작**
+        - scrollViewDidEndDecelerating : scrollView가 scroll되다가 **scroll되는 속도가 감속되면 동작**
+
+            → 이건 그냥 멈추면 헤더 나타나는 동작이 안 나타날 수도 있다
+
+    - 헤더의 움직임은 일반 과제와 동일하게 `CGAffineTransform` 와 `.identity`를 사용
+    - 움직이는 조건은 scrollView `y좌표의 contentOffset`이 0보다 크면 애니메이션이 작동하도록 했다
+
+        →  상단에서 스크롤하면 움직이지 않도록, 그 외의 부분에서는 애니메이션 작동
+
+    - `isTop`이라는 boolean값을 사용해서 `headerView`가 상단에서 스크롤할 때 움직이지 않도록 했다
+    
+    
+    <br/>
+    
+    
+    🔥 **`headerView`와 `scrollView`를 다른 조건에 넣은 이유**
+
+    → 같은 조건(scrollView.contentOffset.y > 0)에 넣었더니 상단에서 스크롤 하고 나서 두 View 사이에 ⭐️**빈 틈**⭐️이 생김
+
+    🔥 **`self.scrollView.frame.size.height = UIScreen.main.bounds.size.height` 을 매번 해주는 이유**
+
+    → scrollView의 `frame`은 애니메이션에 의해서 `translationX의 y값`정도 위로 올라가 있다. 따라서 우리는 tabBar와 scrollView사이에 **⭐️틈⭐️**을 발견할 수 있다. 이 틈을 메우기 위해선 `scrollView의 frame height`를 `UIScreen의 height` 사이즈로 지정해줘야 한다.
+
+    #### 📌 하지만 멈췄을 때는 원래의 height로 돌려줘야 한다는 걸 잊어선 안된다❗️
+
+    #### ⭐️⭐️ 무엇보다도 viewDidLoad에 scrollView와 TextField를 `Delegate`해줘야 한다는 걸 잊지 말자 (제발!!) ⭐️⭐️
+    
+<br/>
+<br/>
+
+---    
+
 ## 🐥 3주차 과제 (11/06_제출 완료) 🐥
 - [일반 과제](https://github.com/27thONSOPT-iOS/ShinYoonAh/tree/master/assignment/PA3_iOS/PA3_iOS)
 
