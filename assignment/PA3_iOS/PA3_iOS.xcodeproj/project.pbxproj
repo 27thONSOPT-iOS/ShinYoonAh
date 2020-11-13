@@ -23,6 +23,8 @@
 		EDE4070B255C1BE00097CD46 /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDE40705255C1BCF0097CD46 /* NotoSansKR-Thin.otf */; };
 		EDE4070C255C1BE00097CD46 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDE40702255C1BCF0097CD46 /* NotoSansKR-Bold.otf */; };
 		EDE4070D255C1BE00097CD46 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDE40704255C1BCF0097CD46 /* NotoSansKR-Black.otf */; };
+		EDE40718255CFE7B0097CD46 /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE40717255CFE7B0097CD46 /* CollectionVC.swift */; };
+		EDE4071B255D07190097CD46 /* CollectionTestOneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE4071A255D07190097CD46 /* CollectionTestOneVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		EDE40704255C1BCF0097CD46 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
 		EDE40705255C1BCF0097CD46 /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
 		EDE40706255C1BD40097CD46 /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		EDE40717255CFE7B0097CD46 /* CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
+		EDE4071A255D07190097CD46 /* CollectionTestOneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTestOneVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +94,13 @@
 				EDE406A0255511DF0097CD46 /* Profile.swift */,
 				EDE406912555029C0097CD46 /* ProfileViewCell.swift */,
 				EDE4067F2554F82D0097CD46 /* Main.storyboard */,
+				EDE4071A255D07190097CD46 /* CollectionTestOneVC.swift */,
 				EDE406822554F82E0097CD46 /* Assets.xcassets */,
 				EDE406842554F82E0097CD46 /* LaunchScreen.storyboard */,
 				EDE406872554F82E0097CD46 /* Info.plist */,
 				EDE406F9255C141B0097CD46 /* LoginViewController.swift */,
 				EDE406FC255C144E0097CD46 /* PartLoginViewController.swift */,
+				EDE40717255CFE7B0097CD46 /* CollectionVC.swift */,
 			);
 			path = PA3_iOS;
 			sourceTree = "<group>";
@@ -177,6 +183,8 @@
 			files = (
 				EDE406FA255C141B0097CD46 /* LoginViewController.swift in Sources */,
 				EDE406922555029C0097CD46 /* ProfileViewCell.swift in Sources */,
+				EDE40718255CFE7B0097CD46 /* CollectionVC.swift in Sources */,
+				EDE4071B255D07190097CD46 /* CollectionTestOneVC.swift in Sources */,
 				EDE406FD255C144E0097CD46 /* PartLoginViewController.swift in Sources */,
 				EDE406A1255511DF0097CD46 /* Profile.swift in Sources */,
 				EDE4067E2554F82D0097CD46 /* ViewController.swift in Sources */,
