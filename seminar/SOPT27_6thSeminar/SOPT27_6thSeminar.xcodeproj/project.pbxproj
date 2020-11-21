@@ -3,19 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14BA20B587EA35EAA4FF599C /* Pods_SOPT27_6thSeminar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125A30782019507303829757 /* Pods_SOPT27_6thSeminar.framework */; };
 		ED18F27D2568C89500335123 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED18F27C2568C89500335123 /* AppDelegate.swift */; };
 		ED18F27F2568C89500335123 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED18F27E2568C89500335123 /* SceneDelegate.swift */; };
 		ED18F2812568C89500335123 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED18F2802568C89500335123 /* ViewController.swift */; };
 		ED18F2842568C89500335123 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED18F2822568C89500335123 /* Main.storyboard */; };
 		ED18F2862568C89800335123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED18F2852568C89800335123 /* Assets.xcassets */; };
 		ED18F2892568C89800335123 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED18F2872568C89800335123 /* LaunchScreen.storyboard */; };
+		ED18F2972568CB1300335123 /* LoginSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED18F2962568CB1300335123 /* LoginSB.storyboard */; };
+		ED18F29A2568CB5E00335123 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED18F2992568CB5E00335123 /* LoginViewController.swift */; };
+		ED18F29D2568CD9B00335123 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED18F29C2568CD9B00335123 /* APIConstants.swift */; };
+		ED18F2A02568CE5200335123 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED18F29F2568CE5200335123 /* GenericResponse.swift */; };
+		ED18F2A32568CFCD00335123 /* SignInData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED18F2A22568CFCD00335123 /* SignInData.swift */; };
+		ED18F2A62568D03000335123 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED18F2A52568D03000335123 /* NetworkResult.swift */; };
+		ED18F2A92568D34C00335123 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED18F2A82568D34C00335123 /* AuthService.swift */; };
+		ED18F2B12568E43E00335123 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED18F2B02568E43E00335123 /* SignUpVC.swift */; };
+		ED18F2B52568E57D00335123 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED18F2B42568E57D00335123 /* SignUp.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		125A30782019507303829757 /* Pods_SOPT27_6thSeminar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SOPT27_6thSeminar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56117A816082C66CFD4EF694 /* Pods-SOPT27_6thSeminar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SOPT27_6thSeminar.debug.xcconfig"; path = "Target Support Files/Pods-SOPT27_6thSeminar/Pods-SOPT27_6thSeminar.debug.xcconfig"; sourceTree = "<group>"; };
+		BA1E16104834FB471497FE7E /* Pods-SOPT27_6thSeminar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SOPT27_6thSeminar.release.xcconfig"; path = "Target Support Files/Pods-SOPT27_6thSeminar/Pods-SOPT27_6thSeminar.release.xcconfig"; sourceTree = "<group>"; };
 		ED18F2792568C89500335123 /* SOPT27_6thSeminar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOPT27_6thSeminar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED18F27C2568C89500335123 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED18F27E2568C89500335123 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +37,15 @@
 		ED18F2852568C89800335123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED18F2882568C89800335123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED18F28A2568C89800335123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED18F2962568CB1300335123 /* LoginSB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginSB.storyboard; sourceTree = "<group>"; };
+		ED18F2992568CB5E00335123 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ED18F29C2568CD9B00335123 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		ED18F29F2568CE5200335123 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
+		ED18F2A22568CFCD00335123 /* SignInData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInData.swift; sourceTree = "<group>"; };
+		ED18F2A52568D03000335123 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		ED18F2A82568D34C00335123 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		ED18F2B02568E43E00335123 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		ED18F2B42568E57D00335123 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +53,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14BA20B587EA35EAA4FF599C /* Pods_SOPT27_6thSeminar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5CAB09578C963DA95FDD0554 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				125A30782019507303829757 /* Pods_SOPT27_6thSeminar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B430012F7BC784074993D531 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				56117A816082C66CFD4EF694 /* Pods-SOPT27_6thSeminar.debug.xcconfig */,
+				BA1E16104834FB471497FE7E /* Pods-SOPT27_6thSeminar.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ED18F2702568C89500335123 = {
 			isa = PBXGroup;
 			children = (
 				ED18F27B2568C89500335123 /* SOPT27_6thSeminar */,
 				ED18F27A2568C89500335123 /* Products */,
+				B430012F7BC784074993D531 /* Pods */,
+				5CAB09578C963DA95FDD0554 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +98,7 @@
 		ED18F27B2568C89500335123 /* SOPT27_6thSeminar */ = {
 			isa = PBXGroup;
 			children = (
+				ED18F2AB2568D62A00335123 /* APIService */,
 				ED18F27C2568C89500335123 /* AppDelegate.swift */,
 				ED18F27E2568C89500335123 /* SceneDelegate.swift */,
 				ED18F2802568C89500335123 /* ViewController.swift */,
@@ -63,8 +106,24 @@
 				ED18F2852568C89800335123 /* Assets.xcassets */,
 				ED18F2872568C89800335123 /* LaunchScreen.storyboard */,
 				ED18F28A2568C89800335123 /* Info.plist */,
+				ED18F2962568CB1300335123 /* LoginSB.storyboard */,
+				ED18F2992568CB5E00335123 /* LoginViewController.swift */,
+				ED18F29F2568CE5200335123 /* GenericResponse.swift */,
+				ED18F2A22568CFCD00335123 /* SignInData.swift */,
+				ED18F2B02568E43E00335123 /* SignUpVC.swift */,
+				ED18F2B42568E57D00335123 /* SignUp.storyboard */,
 			);
 			path = SOPT27_6thSeminar;
+			sourceTree = "<group>";
+		};
+		ED18F2AB2568D62A00335123 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				ED18F2A82568D34C00335123 /* AuthService.swift */,
+				ED18F29C2568CD9B00335123 /* APIConstants.swift */,
+				ED18F2A52568D03000335123 /* NetworkResult.swift */,
+			);
+			path = APIService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED18F28D2568C89800335123 /* Build configuration list for PBXNativeTarget "SOPT27_6thSeminar" */;
 			buildPhases = (
+				43FE2E0FB97E70FB1195ECB6 /* [CP] Check Pods Manifest.lock */,
 				ED18F2752568C89500335123 /* Sources */,
 				ED18F2762568C89500335123 /* Frameworks */,
 				ED18F2772568C89500335123 /* Resources */,
+				61D4AE167BA5494637D6EDAA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,19 +188,70 @@
 				ED18F2892568C89800335123 /* LaunchScreen.storyboard in Resources */,
 				ED18F2862568C89800335123 /* Assets.xcassets in Resources */,
 				ED18F2842568C89500335123 /* Main.storyboard in Resources */,
+				ED18F2972568CB1300335123 /* LoginSB.storyboard in Resources */,
+				ED18F2B52568E57D00335123 /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		43FE2E0FB97E70FB1195ECB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SOPT27_6thSeminar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61D4AE167BA5494637D6EDAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SOPT27_6thSeminar/Pods-SOPT27_6thSeminar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SOPT27_6thSeminar/Pods-SOPT27_6thSeminar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SOPT27_6thSeminar/Pods-SOPT27_6thSeminar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ED18F2752568C89500335123 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED18F2A32568CFCD00335123 /* SignInData.swift in Sources */,
+				ED18F2A02568CE5200335123 /* GenericResponse.swift in Sources */,
+				ED18F29A2568CB5E00335123 /* LoginViewController.swift in Sources */,
+				ED18F2A92568D34C00335123 /* AuthService.swift in Sources */,
+				ED18F29D2568CD9B00335123 /* APIConstants.swift in Sources */,
 				ED18F2812568C89500335123 /* ViewController.swift in Sources */,
 				ED18F27D2568C89500335123 /* AppDelegate.swift in Sources */,
 				ED18F27F2568C89500335123 /* SceneDelegate.swift in Sources */,
+				ED18F2B12568E43E00335123 /* SignUpVC.swift in Sources */,
+				ED18F2A62568D03000335123 /* NetworkResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +395,7 @@
 		};
 		ED18F28E2568C89800335123 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56117A816082C66CFD4EF694 /* Pods-SOPT27_6thSeminar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +414,7 @@
 		};
 		ED18F28F2568C89800335123 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA1E16104834FB471497FE7E /* Pods-SOPT27_6thSeminar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
