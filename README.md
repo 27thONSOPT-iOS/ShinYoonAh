@@ -1,5 +1,265 @@
 # ShinYoonAh
 
+## 🐔 6주차 과제 (11/21_제출 완료) 🐔
+- [**일반 과제]**
+
+    ▶️ 6주차 세미나 과제에서 회원가입과 로그인이 잘 진행되도록 하는 것이 과제 🔥 <br/> <br/>
+    	
+    😎 그 전에 네트워크 통신에 대해서 정리하는 시간 😎
+
+    1. POST : 데이터를 `BODY`에 숨겨 서버에 전달하는 방식, 데이터의 전송과 더불어 `갱신`, `삽입`에도 사용된다.
+    2. GET : `URL`에 변수를 포함시켜 서버에 데이터를 요청하는 방식, 리소스를 읽을 때 주로 사용한다.
+    3. PUT : 해당 리소스에 대한 데이터의 `수정`에 주로 사용
+    4. DELETE : 해당 리소스에 대한 데이터의 `삭제`에 주로 사용
+
+    - REST API
+
+        ➰ REST : `REST(Representational State Transfer)`는 네트워크 자원을 정의하고 자원에 대한 주소를 관리하는 방법, `HTTP 기반`으로 필요한 자원에 접근하는 방식을 정해놓은 아키텍쳐
+
+        👉 행위(Verb): HTTP Method <br/>
+        👉 자원(Resource): URI <br/>
+        👉 메시지(Representation): { “age”: 35 } 과 같은 JSON 포맷의 데이터 <br/>
+
+        ~> `URI`로 접근
+
+        ~> 전달 방식으로 `HTTP Method`를 사용하여 `조회/삽입/갱신/삭제` 수행
+
+    - JSON(JavaScript Object Notation)
+
+        ➰ 주고 받을 수 잇는 자료형은 Int, String, Boolean, Array, Object
+
+        ➰ `Key` 와 `Value`로 이루어져 있으며 객체는 `중괄호 {}`, 배열은 `대괄호 []`로 감싼다. 
+	<br/> <br/>
+
+
+    🔥  통신을 위해서 `Alamofire`를 `pod install`
+
+    ⚙️ 통신 실습을 위한 설정
+
+    1. `Info.plist`
+    2. Information Property List → '+' button → App Transport Security Settings → '+' button → Allow Arbitrary Loads → 'Yes'
+    3. API 문서 통해서 URL 주소 확인
+    4. `APIConstants.swift` → API 주소 모아두는 곳
+
+        ```swift
+        struct APIConstants {
+        		static let baseURL = "http://15.164.83.210:3000"
+        		static let usersSignInURL = baseURL + "/users/signin"
+        		static let usersSignUpURL = baseURL + "/users/signup" 
+        }
+        ```
+
+    5. `GenericResponse.swift` → `Codable` : 데이터를 JSON 데이터 포맷으로 자유롭게 `Decoding`, `Encoding` 할 수 있도록 해주는 protocol
+
+        ```swift
+        struct GenericResponse<T: Codable>: Codable { 
+            var status: Int
+            var success: Bool
+            var message: String
+            var data: T?
+
+        		// JSON 데이터의 키 와 swift struct의 변수를 맵핑하는 역할
+            enum CodingKeys: String, CodingKey {
+                case status = "status"
+                case success = "success"
+                case message = "message"
+                case data = "data"
+            }
+
+        		// data에 대한 키 값이 있는 경우와 없는 경우를 모두 처리하는 역할
+            init(from decoder: Decoder) throws {
+                let values = try decoder.container(keyedBy: CodingKeys.self)
+                status = (try? values.decode(Int.self, forKey: .status)) ?? -1
+                success = (try? values.decode(Bool.self, forKey: .success)) ?? false
+                message = (try? values.decode(String.self, forKey: .message)) ?? ""
+                data = (try? values.decode(T.self, forKey: .data)) ?? nil
+        		} 
+        }
+        ```
+
+    6. data를 통해 들어올 타입도 만들어 주기 → `SignInData.swift`
+    7. [https://quicktype.io/](https://quicktype.io/) : `JSON 데이터 타입`을 간편하게 `swift의 struct`로 변환해주는 사이트
+    8. 데이터 받기를 성공했을 때 받아올 타입 생성(SignInData.swift) 
+
+        ```swift
+        struct SignInData: Codable {
+            var email, password, userName: String
+        }
+        ```
+
+    9. `NetworkResult.swift` → 서버 통신에 따른 결과
+
+        ```swift
+        // 서버 통신에 대한 결과(성공, 요청에러, 경로에러, 서버내부에러, 네트워크 연결 실패)
+        enum NetworkResult<T> {
+            case success(T)
+            case requestErr(T)
+            case pathErr
+            case serverErr
+            case networkFail
+        }
+        ```
+
+    10. `AuthService.swift` → `로그인 서버 통신` 구현을 위한 구조체
+
+        ```swift
+        import Foundation
+        import Alamofire
+
+        struct AuthService {
+        	// 싱글톤 객체로 앱 어디서든 접근 가능
+            	static let shared = AuthService()
+        		
+        	func signIn(email: String,
+        			password: String,
+        			completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        		// 통신 url, 요청 헤더, 요청 바디
+        		let url = APIConstants.usersSignInURL
+        		let header: HTTPHeaders = [
+        			"Content-Type":"application/json"
+        		]
+        		let body: Parameters = [
+        			"email": email,
+        			"password":password
+        		]
+        		// 원하는 형식의 HTTP Request 생성
+        		let dataRequest = AF.request(url,
+                                     		method: .post,
+                                     		parameters: body,
+                                     		encoding: JSONEncoding.default,
+                                     		headers: header)
+        		// 데이터 통신 시작            데이터 통신 결과
+        		dataRequest.responseData { (response) in
+        			// 통신의 성공실패에 따른 분기처리
+        			switch response.result {
+        			case .success:
+        				// 통신의 결과에 따라 statusCode와 value 값을 가지게 됨
+        				guard let statusCode = response.response?.statusCode else { 
+        					return
+        				}
+        				guard let data = response.value else {
+     						return
+        				}
+        				// Completion이란 클로져에게 전달할 데이터를 judgeSignInData라는 함수를 통해 결정
+        				completion(judgeSignInData(status: statusCode, data: data))
+        		       case .failure(let err):
+        	            		print(err)
+        				completion(.networkFail) 
+        			}
+        		}
+        	}
+        	// statusCode와 decode 결과에 따라 NetworkResult를 반환시켜준다.
+        	private func judgeSignInData(status: Int, data: Data) -> NetworkResult<Any> {
+        		// 통신을 통해 전달받은 데이터를 decode
+        		let decoder = JSONDecoder()
+        		guard let decodedData = try? decoder.decode(GenericResponse<SignInData>.self, from: data) else {
+        			return .pathErr
+        		}
+        		// statusCode를 통해 통신 결과를 알 수 있다.
+        		switch status {
+        			// 성공적으로 통신에 성공, 성공했다는 결과와 함께 decode한 data값도 전달해 준다.
+        			case 200:
+        				return .success(decodedData.data) 
+        			// 통신에는 성공했지만, 요청값에 대한 오류 처리 오류 결과와 함께 오류 메세지를 전달한다.
+        			case 400..<500:
+        				return .requestErr(decodedData.message) 
+        			// Server 개발자가 지정한 Server상 의 에러 코드 에러 결과만을 보내준다.
+        			case 500:
+        			        return .serverErr
+        			default:
+        			        return .networkFail
+        		}
+        	}
+        }
+        ```
+	<br/>
+	<br/>
+
+    1️⃣  회원가입 통신 하기
+
+    1. `APIConstants.swift` → signUp URL 넣어주자
+    2. `AuthService.swift` → signUp 함수를 넣어주자(userName를 받기 때문에 userName항목 추가)
+
+        ```swift
+        func signUp(email: String, password: String, userName: String, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+                let url = APIConstants.usersSignUpURL
+                
+                let header: HTTPHeaders = [
+                    "Content-Type":"application/json"
+                ]
+                
+                let body: Parameters = [
+                    "email": email,
+                    "password": password,
+                    "userName": userName
+                ]
+                
+                let dataRequest = AF.request(url,
+                                             method: .post,
+                                             parameters: body,
+                                             encoding: JSONEncoding.default,
+                                             headers: header)
+                
+                dataRequest.responseData { (response) in
+                    switch response.result {
+                    case .success:
+                        guard let statusCode = response.response?.statusCode else {
+                            return
+                        }
+                        guard let data = response.value else {
+                            return
+                        }
+                        completion(judgeSigninData(status: statusCode, data: data))
+                    case .failure(let err):
+                        print(err)
+                        completion(.networkFail)
+                    }
+                }
+                
+            }
+        ```
+
+    3. 회원 가입 하기 버튼을 눌렀을 때 → 통신이 이뤄지도록 하기
+
+        ```swift
+        guard let emailText = emailTextField.text,
+                      let password = passwordTextField.text,
+                      let name = userNameTextField.text else {
+                    return
+                }
+                
+                AuthService.shared.signUp(email: emailText,
+                                          password: password, userName: name) { (networkResult) in
+                    switch networkResult {
+                    case .success(let data):
+                        if let data = data as? SignInData {
+                            self.simpleAlert(title: "회원 가입 성공", message: "\(data.userName)님 회원 가입 성공!")
+                            UserDefaults.standard.set(data.userName, forKey: "userName")
+                            self.presentingViewController?.dismiss(animated: true, completion: nil)
+                        }
+                        print("success")
+                    case .requestErr(let msg):
+                        if let message = msg as? String {
+                            self.simpleAlert(title: "회원 가입 실패", message: message)
+                        }
+                        print("requestErr")
+                    case .pathErr:
+                        print("pathErr")
+                    case .serverErr:
+                        print("serverErr")
+                    case .networkFail:
+                        print("networkFail")
+                    }
+                }
+        ```
+
+        → `simpleAlert` 사용해서 메시지 창이 띄워질 수 있도록 하자
+	
+<br/>
+<br/>
+
+--- 
+
 ## 🐥 4주차 과제 (11/12_제출 완료) 🐥
 - [**일반 과제**](https://github.com/27thONSOPT-iOS/ShinYoonAh/tree/master/assignment/PA3_iOS/PA3_iOS)
 
